@@ -19,6 +19,7 @@ async function main() {
     useUnifiedTopology: true,
     ssl: true,
     sslValidate: true,
+    tlsAllowInvalidCertificates: false,
     serverSelectionTimeoutMS: 10000,
   });
 }
