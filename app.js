@@ -109,12 +109,15 @@ app.all("*", (req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
+  res.locals.currUser = req.user || null;
   console.log(err);
   let { statusCode = 500, message = "Something went wrong!!" } = err;
   res.status(statusCode).render("error.ejs", { err });
   // res.status(statusCode).send(message);
 });
 
-app.listen(8080, () => {
-  console.log("app is listening to port 8080");
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`app is listening on port ${PORT}`);
 });
+

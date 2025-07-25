@@ -10,7 +10,6 @@ const {validateReview, isLoggedIn, isReviewAuthor} = require("../middleware.js")
 const reviewcontroller =  require("../controllers/reviews.js")
 
 
-
 //Review route
 //POST review
 
